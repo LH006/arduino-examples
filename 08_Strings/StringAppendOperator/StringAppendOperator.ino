@@ -23,37 +23,36 @@ void setup() {
 
   stringOne = String("Sensor ");
   stringTwo = String("value");
+
   // send an intro:
   Serial.println("\n\nAppending to a String:");
   Serial.println();
 }
 
 void loop() {
-  Serial.println(stringOne);  // prints  "Sensor "
+  Serial.println(stringOne);  // 출력표시  "Sensor "
 
   // adding a string to a String:
   stringOne += stringTwo;
-  Serial.println(stringOne);  // prints "Sensor value"
+  Serial.println(stringOne);  // 출력표시 "Sensor value"
 
   // adding a constant string to a String:
   stringOne += " for input ";
-  Serial.println(stringOne);  // prints "Sensor value for input"
+  Serial.println(stringOne);  // 출력표시 "Sensor value for input"
 
   // adding a constant character to a String:
   stringOne += 'A';
-  Serial.println(stringOne);   // prints "Sensor value for input A"
+  Serial.println(stringOne);   // 출력표시 "Sensor value for input A"
 
   // adding a constant integer to a String:
   stringOne += 0;
   Serial.println(stringOne);   // prints "Sensor value for input A0"
 
-  // adding a constant string to a String:
-  stringOne += ": ";
-  Serial.println(stringOne);  // prints "Sensor value for input"
 
   // adding a variable integer to a String:
   stringOne += analogRead(A0);
   Serial.println(stringOne);   // prints "Sensor value for input A0: 456" or whatever analogRead(A0) is
+
 
   Serial.println("\n\nchanging the Strings' values");
   stringOne = "A long integer: ";

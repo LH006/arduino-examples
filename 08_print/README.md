@@ -1,35 +1,23 @@
 ***
 # []
 #### 예제1
-```
- 
-    printf("PACKET TYPE=%s, CHAN=%02d, RSSI=%02d,"
-      " ADDR2=%02x:%02x:%02x:%02x:%02x:%02x\n",
-      wifi_sniffer_packet_type2str(type),
-      ppkt->rx_ctrl.channel,
-      ppkt->rx_ctrl.rssi,
-      hdr->addr2[0],hdr->addr2[1],hdr->addr2[2],
-      hdr->addr2[3],hdr->addr2[4],hdr->addr2[5]
-    );
+```C++
+printf("PACKET TYPE=%s, CHAN=%02d, RSSI=%02d,"
+       " ADDR2=%02x:%02x:%02x:%02x:%02x:%02x\n",
+       wifi_sniffer_packet_type2str(type),
+       ppkt->rx_ctrl.channel,
+       ppkt->rx_ctrl.rssi,
+       hdr->addr2[0], hdr->addr2[1], hdr->addr2[2],
+       hdr->addr2[3], hdr->addr2[4], hdr->addr2[5]);
 ```
 #### 예제2
-```
-    SerialBT.print("PACKET_TYPE= " + String(wifi_sniffer_packet_type2str(type))
-                   + " CHAN= " + String(ppkt->rx_ctrl.channel)
-                   + " RSSI= " + String(ppkt->rx_ctrl.rssi)
-                   + " ADDR2= " 
-                   + String(hdr->addr2[0], HEX) + ":"
-                   + String(hdr->addr2[1], HEX) + ":"
-                   + String(hdr->addr2[2], HEX) + ":"
-                   + String(hdr->addr2[3], HEX) + ":"
-                   + String(hdr->addr2[4], HEX) + ":"
-                   + String(hdr->addr2[5], HEX) + "\n" 
-                   );
+```C++
+SerialBT.print("PACKET_TYPE= " + String(wifi_sniffer_packet_type2str(type)) + " CHAN= " + String(ppkt->rx_ctrl.channel) + " RSSI= " + String(ppkt->rx_ctrl.rssi) + " ADDR2= " + String(hdr->addr2[0], HEX) + ":" + String(hdr->addr2[1], HEX) + ":" + String(hdr->addr2[2], HEX) + ":" + String(hdr->addr2[3], HEX) + ":" + String(hdr->addr2[4], HEX) + ":" + String(hdr->addr2[5], HEX) + "\n");
 ```
 ***
 # [문자열]
 #### 예제1
-```
+```C++
   stringOne = String("You added ");
   stringTwo = String("this string");
   stringThree = String();
@@ -66,7 +54,7 @@
 ```
 ***
 #### 예제2
-```
+```C++
 #ifdef _DEBUG
   {
     Serial.print(frequency);

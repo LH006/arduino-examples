@@ -8,3 +8,6 @@
 #include <WiFi.h> //ESP32
 #endif
 ```
+
+[소켓 시리얼 모니터](
+https://github.com/tzapu/WebSocketSerialMonitor/tree/master)

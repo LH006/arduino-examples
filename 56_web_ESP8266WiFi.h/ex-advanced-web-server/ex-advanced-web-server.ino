@@ -1,6 +1,7 @@
-*
+/*
 포트(예: 80, 443, 1720)에서 클라이언트의 접속을 기다리는 리스닝(Listening) 상태를 유지합
 */
+
 // 기본 라이브러리
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>

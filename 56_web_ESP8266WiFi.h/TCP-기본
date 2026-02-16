@@ -1,0 +1,58 @@
+#include <ESP8266WiFi.h>
+
+const char* ssid = "YOUR_WIFI_SSID";          // 와이파이 이름
+const char* password = "YOUR_WIFI_PASSWORD";  // 와이파이 비번
+
+const char* host = "192.168.0.10";            // 서버 IP 주소 (PC 주소 등)
+const uint16_t port = 8080;                   // 서버 포트 번호
+
+void setup() {
+  Serial.begin(115200);
+  
+  // 1. 와이파이 연결
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWiFi 연결 완료!");
+}
+
+void loop() {
+  Serial.printf("서버(%s:%d) 접속 시도...\n", host, port);
+
+  // 2. TCP 클라이언트 객체 생성
+  WiFiClient client;
+
+  // 3. 서버 접속
+  if (!client.connect(host, port)) {
+    Serial.println("접속 실패!");
+    delay(5000);
+    return;
+  }
+
+  // 4. 데이터 전송 (Write)
+  client.print("Hello from ESP8266!");
+
+  // 5. 서버로부터 응답 받기 (Read)
+  unsigned long timeout = millis();
+  while (client.available() == 0) {
+    if (millis() - timeout > 5000) {
+      Serial.println(">>> 타임아웃!");
+      client.stop();
+      return;
+    }
+  }
+
+  while (client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.print("서버 응답: ");
+    Serial.println(line);
+  }
+
+  // 6. 연결 종료
+  Serial.println("연결 종료");
+  client.stop();
+
+  delay(10000); // 10초마다 반복
+}

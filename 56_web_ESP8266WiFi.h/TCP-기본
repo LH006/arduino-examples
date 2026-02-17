@@ -3,6 +3,7 @@
 const char* ssid = "YOUR_WIFI_SSID";          // 와이파이 이름
 const char* password = "YOUR_WIFI_PASSWORD";  // 와이파이 비번
 
+
 const char* host = "192.168.0.10";            // 서버 IP 주소 (PC 주소 등)
 const uint16_t port = 8080;                   // 서버 포트 번호
 

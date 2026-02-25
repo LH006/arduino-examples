@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Web 온도/습도</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <h1>제어과 메인조</h1>
+    <h1>스마트팜</h1>
+  </div>
+  <div class="content">
+    <div class="card1">
+      <p class="state"><i class="fas fa-temperature-high"></i> 온도 : <span id="id_State_Temperature" style="font-size:60px">%State_TEMPERATURE%</span>&deg;C</p>
+      <p class="state"><i class="fas fa-humidity"></i> 습도 : <span id="id_State_Humidity" style="font-size:60px">%State_HUMIDITY%</span>&percnt;</p>
+      <p class="state"> 토양 : <span id="id_State_Soilmoisture" style="font-size:60px">%State_SOILMOISTURE%</span>&percnt;</p>
+      <p class="state"><i class="fas fa-humidity"></i> 물통 : <span id="id_State_Water_Value" style="font-size:60px">%State_Water_Value%</span>&percnt;</p>
+    </div>
+    <p></P>
+    <div class="card">
+      <h2>자동/수동 모드</h2>
+      <p class="state">모드 : <span id="id_state_Mode">%STATE_MODE%</span></p>
+      <p><button id="id_button_Mode" class="button">자동/수동</button></p>
+    </div>
+    <p></P>
+    <div class="card">
+      <h2>팬</h2>
+      <p class="state">상태 : <span id="id_state_Fan">%STATE_FAN%</span></p>
+      <p><button id="id_button_Fan" class="button">팬</button></p>
+    </div>
+    <p></P>
+    <div class="card">
+      <h2>성장LED상태</h2>
+      <p class="state">상태 : <span id="id_state_Led">%STATE_LED%</span></p>
+      <p><button id="id_button_Led" class="button">성장LED</button></p>
+    </div>
+    <p></P>
+    <div class="card">
+      <h2>물펌프</h2>
+      <p class="state">상태 : <span id="id_state_Pump">%STATE_PUMP%</span></p>
+      <p><button id="id_button_Pump" class="button">물주기</button></p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h2>- 링크 -</h2>
+      <p><a href="/">Main Page</a></p>
+       <p><a href="/camera.html">카메라 보기</a></p>
+       <p><a href="/update">파일업데이트</a></p>
+
+    </div>
+  </div>
+  <script>
+    var gateway = `ws://${window.location.hostname}/ws`;
+    var websocket;
+    window.addEventListener('load', onLoad); //addEventListener() 메서드는 지정한 이벤트가 대상에 전달될 때마다 호출할 함수를 설정
+    //>>>>>>
+    function onLoad(event) {
+      //console.log('확인용 addEventListener() 메서드는 지정한 이벤트 발생 (한번실행)');
+      initWebSocket(); //설정 웹소켓
+      initButton(); //설정 버튼
+    }
+    //>>>>>>>
+    function initWebSocket() {
+      //alert("확인 창 띄우기:initWebSocket()실행");
+      console.log('WebSocket 연결중...(한번실행)');
+      websocket = new WebSocket(gateway);
+      websocket.onopen = onOpen;
+      websocket.onclose = onClose;
+      websocket.onmessage = onMessage; //펑션 실행
+    }
+    //>>>>>>>>
+    function onOpen(event) {
+      console.log('WebSocket 연결완료(Connection opened) (한번실행)');
+    }
+    //>>>>>>>>>
+    function onClose(event) {
+      console.log('WebSocket 연결종료(Connection closed)');
+      setTimeout(initWebSocket, 2000); //2초후 실행
+    }
+    //>>> 이벤트 발생 지정하기 생각에...
+    function initButton() {
+      console.log("initButton() 펑션실행 (처음 한번만 실행됨)");
+      document.getElementById('id_button_Mode').addEventListener('click', Event_Mode); //이벤트 등록 //펑션실행 Event_toggle_1
+      document.getElementById('id_button_Fan').addEventListener('click', Event_Fan); //이벤트 등록
+      document.getElementById('id_button_Led').addEventListener('click', Event_Led); //이벤트 등록
+      document.getElementById('id_button_Pump').addEventListener('click', Event_Pump); //이벤트 등록
+    }
+    //>>> 웹 버튼1클릭시 발생
+    function Event_Mode() {
+      websocket.send('websocket_tx_Mode');
+      console.log("클라이언트 버튼1 누름"); //표시용 onMessage실행
+    }
+    //>>> 웹 버튼2클릭시 발생
+    function Event_Fan() {
+      websocket.send('websocket_tx_Fan');
+      console.log("클라이언트 버튼2 누름"); //표시용 onMessage실행
+    }
+    //>>> 웹 버튼클릭시 발생
+    function Event_Led() {
+      websocket.send('websocket_tx_Led');
+      console.log("클라이언트 버튼3 누름"); //표시용 onMessage실행
+    }
+    //>>> 웹 버튼클릭시 발생
+    function Event_Pump() {
+      websocket.send('websocket_tx_Pump');
+      console.log("클라이언트 버튼4 누름"); //표시용 onMessage실행
+    }
+    //MCU 상태값 읽어오기용 >>>>>>>>>
+    function onMessage(event) {
+      //console.log('onMessage()실행 웹소켓에 데이터 들어옴):' + event.data); //들어올때마다 실행
+      let temp_string; //변수 만들기
+      temp_string = event.data.substring(0, 18);
+      if (temp_string == 'State_TEMPERATURE=') {
+        console.log('​​​​​​onMessage(event):' + temp_string + 'OK');
+        //alert("State_Temperature=ok");
+        temp_string = event.data.substring(18, 22);
+        document.getElementById('id_State_Temperature').innerHTML = temp_string;
+      }
+      temp_string = event.data.substring(0, 15);
+      if (temp_string == 'State_HUMIDITY=') {
+        console.log('onMessage(event):' + temp_string + 'OK');
+        //alert("State_Humidity=ok");
+        temp_string = event.data.substring(15, 19);
+        document.getElementById('id_State_Humidity').innerHTML = temp_string;
+      }
+      
+      temp_string = event.data.substring(0, 19);
+      if (temp_string == 'State_SOILMOISTURE=') {
+        console.log('onMessage(event):' + temp_string + 'OK');
+        //alert("State_Humidity=ok");
+        temp_string = event.data.substring(19, 23);
+        document.getElementById('id_State_Soilmoisture').innerHTML = temp_string;
+      }
+      temp_string = event.data.substring(0, 18);
+      if (temp_string == 'State_Water_Value=') {
+        console.log('onMessage(event):' + temp_string + 'OK');
+        //alert("State_Humidity=ok");
+        temp_string = event.data.substring(18, 22);
+        document.getElementById('id_State_Water_Value').innerHTML = temp_string;
+      }
+      switch (event.data) {
+        case "State_Mode=0":
+          document.getElementById('id_state_Mode').innerHTML = "수동";
+          break;
+        case "State_Mode=1":
+          document.getElementById('id_state_Mode').innerHTML = "자동";
+          break;
+        case "State_Fan=0":
+          document.getElementById('id_state_Fan').innerHTML = "OFF";
+          break;
+        case "State_Fan=1":
+          document.getElementById('id_state_Fan').innerHTML = "ON";
+          break;
+        case "State_Led=0":
+          document.getElementById('id_state_Led').innerHTML = "OFF";
+          break;
+        case "State_Led=1":
+          document.getElementById('id_state_Led').innerHTML = "ON";
+          break;
+        case "State_Pump=0":
+          document.getElementById('id_state_Pump').innerHTML = "OFF";
+          break;
+        case "State_Pump=1":
+          document.getElementById('id_state_Pump').innerHTML = "ON";
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

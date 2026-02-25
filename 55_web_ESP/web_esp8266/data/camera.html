@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <style>
+    body { text-align:center; }
+    .vert { margin-bottom: 10%; }
+    .hori{ margin-bottom: 0%; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h2>ESP32-CAM 사진 찍기 보기</h2>
+    <p>사진을 캡처하는 데 5초 이상 걸릴 수 있습니다.</p>
+    <p><a href="/">Main Home Page로 가기</a></p>
+    <p>
+      <button onclick="rotatePhoto();">회전하기</button>
+      <button onclick="capturePhoto()">사진 찍기</button>
+      <button onclick="location.reload();">찍은 사진보기</button>
+    </p>
+  </div>
+  <div><img src="/saved-photo" id="photo" width="70%"></div>
+</body>
+<script>
+  var deg = 0;
+  function capturePhoto() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', "/capture", true);
+    xhr.send();
+  }
+  function rotatePhoto() {
+    var img = document.getElementById("photo");
+    deg += 90;
+    if(isOdd(deg/90)){ document.getElementById("container").className = "vert"; }
+    else{ document.getElementById("container").className = "hori"; }
+    img.style.transform = "rotate(" + deg + "deg)";
+  }
+  function isOdd(n) { return Math.abs(n % 2) == 1; }
+</script>
+</html>
+
+
+
+
+
+
+

@@ -34,8 +34,13 @@ Arduino
 #### [내용2]
 - When using [Arduino IDE](https://www.arduino.cc/en/software), follow [our instructions here](https://arduino-esp8266.readthedocs.io/en/latest/installing.html#using-git-version).
 - When using [링크1](https://platformio.org/install), refer to [링크2](https://docs.platformio.org/en/stable/platforms/espressif8266.html#using-arduino-framework-with-staging-version).
+---
+### [메뉴3]
+* [ ] 사각
+* [ ] 사각
+* [ ] 사각
+---
 
-### Using PlatformIO
 
 [PlatformIO](https://platformio.org?utm_source=arduino-esp8266) is an open source ecosystem for IoT
 development with a cross-platform build system, a library manager, and full support

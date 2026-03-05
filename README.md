@@ -8,7 +8,7 @@ Arduino
 - [링크3] ([sources](doc/installing.rst#using-git-version))
 
 # Arduino project
-  * ESP8266
+*
 
 # Contents
   * 내용 목록

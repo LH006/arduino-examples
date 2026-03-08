@@ -7,9 +7,29 @@ Arduino
 - [Current "버전" documentation](https://arduino-esp8266.readthedocs.io/en/latest/)
 - [Install git version](https://arduino-esp8266.readthedocs.io/en/latest/installing.html#using-git-version) ([sources](doc/installing.rst#using-git-version))
 
-# Arduino on ESP8266
+*기울여 쓰기*
+_기울여 쓰기_
+__굵게 쓰기__
+~~취소선~~
+<u>밑줄</u>
 
-This project brings support for the ESP8266 chip to the Arduino environment. It lets you write sketches, using familiar Arduino functions and libraries, and run them directly on ESP8266, with no external microcontroller required.
+<span style="color:red">빨간색</span>
+<span style="color:#00FF00">Green</span>  (`#`을 넣은 뒤 16진수로 R, G, B 값을 입력해서 지정할 수 있다.)
+<span style="color:rgb(0, 255, 0)">rgb(245, 235, 13)</span>
+결과
+기울여 쓰기
+기울여 쓰기
+굵게 쓰기
+취소선
+밑줄
+Red
+Green
+Blue(245, 235, 13)
+
+
+
+
+.
 
 ESP8266 Arduino core comes with libraries to communicate over WiFi using TCP and UDP, set up HTTP, mDNS, SSDP, and DNS servers, do OTA updates, use a file system in flash memory, and work with SD cards, servos, SPI and I2C peripherals.
 

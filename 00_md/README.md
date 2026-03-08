@@ -31,7 +31,6 @@ Blue(245, 235, 13)
 
 .
 
-ESP8266 Arduino core comes with libraries to communicate over WiFi using TCP and UDP, set up HTTP, mDNS, SSDP, and DNS servers, do OTA updates, use a file system in flash memory, and work with SD cards, servos, SPI and I2C peripherals.
 
 # Contents
 - Installing options:

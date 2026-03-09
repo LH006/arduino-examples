@@ -12,13 +12,28 @@ Arduino
 * (`#`을 넣은 뒤 16진수로 R, G, B 값을 입력해서 지정할 수 있다.)
 * <span style="color:rgb(0, 255, 0)">rgb(245, 235, 13)</span>
 ---
-# C언어표시
 
-```cpp
 
+# [코드 블럭]
+* 인라인 코드를 작성
+* 여러줄의 코드를 작성 할 때는 ｀ 기호 또는 ~를 세번 쓴 코드 블럭을 사용 할 수 있습니다.
+* 코드에 하이라이트를 넣으려면 ｀｀｀기호 뒤에 언어 이름을 쓰면 됩니다.
+* 인라인 코드
+`인라인 코드 표현 시`
+`void function(){}`
+* 인라인 C언어
+~~~cpp
+블럭으로 표현 시
+void function(){}
+~~~
+* 인라인 파이썬
+```python
+또는 물결로도 표시 가능
+def function():
+	pass
 ```
----
 
+---
 <p align="center">
   <br><a href="README.md">한글가능</a> | English | <a href="README.md">파일열기</a>
   <br>1111

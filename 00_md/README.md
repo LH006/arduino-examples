@@ -1,4 +1,4 @@
-Arduino
+MD 파일
 =====================================
 
 # [인용문]
@@ -77,7 +77,14 @@ def function():
 
 #### Latest release [![Latest release](https://img.shields.io/github/release/esp8266/Arduino.svg)](https://github.com/esp8266/Arduino/releases/latest/)
 
-
+# [목록]
+```
+- 순서가 필요 없이 점으로 목록 생성 시
+  * -, *, + 기호가 사용 가능
+  + 들여쓰면 서브목록을 붙일 수 있음
+    - 두 칸을 띄어쓰면
+    + 서브 목록을 붙일 수 있음
+```
 ---
 ### [메뉴3]
 * [ ] 사각

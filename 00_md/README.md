@@ -58,15 +58,15 @@ Arduino
 2. 숫자
 ---
 
-. 링크
+# 링크
 인라인 링크, url링크, 참조링크 기능을 활용해 웹페이지 주소, 이메일 주소를 추가할 수 있습니다.
 
-사용법
-참조링크 - [id]: URL "Option Title"
-인라인 - [Title](Link)
-url링크: <URL/>, E-mail: <abc@abc.com>
-예시
-[Google]: https://www.google.com "Google Link"
-[Google]: (https://www.google.com)
+* [사용법]
+* 참조링크 - [id]: URL "Option Title"
+* 인라인 - [Title](Link)
+* url링크: <URL/>, E-mail: <abc@abc.com>
+* [예시]
+* [Google]: https://www.google.com "Google Link"
+* [Google]: (https://www.google.com)
 [Google]: <https://www.google.com/>
 <email@abc.com>

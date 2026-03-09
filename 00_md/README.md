@@ -19,6 +19,8 @@ Arduino
 
 
 #### Latest release [![Latest release](https://img.shields.io/github/release/esp8266/Arduino.svg)](https://github.com/esp8266/Arduino/releases/latest/)
+
+
 Boards manager link: `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
 Documentation: [https://arduino-esp8266.readthedocs.io/en/3.1.2/](https://arduino-esp8266.readthedocs.io/en/3.1.2/)

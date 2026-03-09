@@ -68,5 +68,5 @@ Arduino
 ### [예시]
 * [Google]: https://www.google.com "Google Link"
 * [Google](https://www.google.com)
-* [Google]: <https://www.google.com/>
-<email@abc.com>
+* [Google]<https://www.google.com/>
+* <email@abc.com>

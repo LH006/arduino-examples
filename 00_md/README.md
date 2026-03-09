@@ -66,7 +66,7 @@ Arduino
 * 인라인 - [Title](Link)
 * url링크: <URL/>, E-mail: <abc@abc.com>
 ### [예시]
-* [Google]: https://www.google.com "Google Link"
+* [Google] https://www.google.com "Google Link"
 * [Google](https://www.google.com)
 * [Google] <https://www.google.com/>
 * <email@abc.com>

@@ -1,9 +1,6 @@
 Arduino
 =====================================
 
-#
-- ([sources](doc/installing.rst#using-git-version))
-
 *기울여 쓰기*
 _기울여 쓰기_
 __굵게 쓰기__

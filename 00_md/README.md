@@ -117,3 +117,6 @@ def function():
 또는 마지막에   
 세 칸 이상 띄우기
 ---
+
+# [즐겨찾기]
+* https://velog.io/@woojinn8/Practice-Markdown-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC

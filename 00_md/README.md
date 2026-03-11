@@ -39,7 +39,6 @@ MD 파일
 `void function(){}`
 
 * 인라인 C언어
-***
 ```C++
 #ifdef _DEBUG
   {
@@ -52,6 +51,7 @@ MD 파일
 블럭으로 표현 시
 void function(){}
 ~~~
+
 * 인라인 파이썬
 ```python
 또는 물결로도 표시 가능

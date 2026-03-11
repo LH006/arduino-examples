@@ -67,7 +67,7 @@ def function():
 ![이미지](이미지 링크)
 
 2. 사이즈를 조절할 경우 - HTML 태그로 처리
-<img src=이미지링크, width="450px" or "40%" height="300px" title="크기변경">
+<img src=이미지링크 width="450px" or "40%" height="300px" title="크기변경">
 (velog에서는 사이즈 변경은 반영이 안되는거 같네요...)
 
 3. 이미지 삽입 후 링크 걸기

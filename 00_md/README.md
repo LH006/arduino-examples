@@ -38,6 +38,16 @@ MD 파일
 `인라인 코드 표현 시`
 `void function(){}`
 * 인라인 C언어
+***
+#### 예제2
+```C++
+#ifdef _DEBUG
+  {
+    Serial.print(frequency);
+    delay(500);
+  }
+#endif
+```
 ~~~cpp
 블럭으로 표현 시
 void function(){}

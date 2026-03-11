@@ -1,7 +1,7 @@
 
 
 #### 예제1
-```
+```C++
 if((aaa==aa) && (bbb==bb) && (ccc==cc ))
 {
   return 1;
@@ -9,7 +9,7 @@ if((aaa==aa) && (bbb==bb) && (ccc==cc ))
 ```
 ***
 #### 예제2
-```
+```C++
 #ifdef _DEBUG
   {
     Serial.print(frequency);

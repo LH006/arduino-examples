@@ -10,7 +10,6 @@
 ### [라이브러리]
 * https://github.com/nRF24
 * https://www.arduinolibraries.info/libraries/rf24
-* https://github.com/nRF24
 * https://github.com/maniacbug
 ---
 ### [예제]

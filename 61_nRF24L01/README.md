@@ -16,12 +16,10 @@
 
 
 # [부속품]
-### L298N 모터 드라이버 모듈
-* https://cafe.naver.com/lsg20004/185
-### 모듈 조이스틱(Keyes_Sjoys) 2축 버튼1
-* https://cafe.naver.com/lsg20004/790
-### 블루투스 모듈HC-06(ZS-040)
-* https://cafe.naver.com/lsg20004/189
+### 모듈
+* https://
+
+
 ---
 # [# 조정방법]
 ### 

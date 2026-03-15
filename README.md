@@ -46,7 +46,7 @@ Arduino
 1. 숫자
 2. 숫자
 
-
+---
 * LED 횟수
 ```Cpp
 const int ledPin = 13;      // LED 핀 번호

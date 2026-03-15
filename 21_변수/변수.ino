@@ -1,9 +1,12 @@
+* g_를 사용하여 전역 변수에 접두어를 지정
+* s_를 사용하여 정적 변수에 접두사를 지정
+/////////////////////////////////
 const char *service_name = "PROV_Kitchen";
 char deviceName_1[] = "Kitchen Light";
 
-// GPIO Setup
-static uint8_t RelayPin1 = 23;
-static uint8_t RelayPin2 = 19;
+
+///////////////////////////////////////
+static uint8_t s_변수명 = 1;
 
 ////////////////////////////////////////////////////////////
 bool AAA(bool AA) {

@@ -1,9 +1,7 @@
-Arduino
+[Arduino] 예제)
 ==========================
 
 # 즐겨찾기
-
-- [링크1][ESP8266](https://github.com/esp8266/)
 - [링크2 "버전"]
 - [링크3] ([sources](doc/installing.rst#using-git-version))
 
@@ -22,32 +20,10 @@ Arduino
 
 ---
 # 예제1)
-#### Latest release [![Latest release](https://img.shields.io/github/release/esp8266/Arduino.svg)](https://github.com/esp8266/Arduino/releases/latest/)
----
-
-### Contents 1
-[내용](#Contents)
-* 아아아아아아
-- 점 리스트 링크: (https://1.com)
-- 점 링크: `https://1.com/index.json`
-- 링크: [링크 보이는 글](https://1.com/)
 
 ### Contents 2
-#### [내용2]
-- When using [Arduino IDE](https://www.arduino.cc/en/software), follow [our instructions here](https://arduino-esp8266.readthedocs.io/en/latest/installing.html#using-git-version).
-- When using [링크1](https://platformio.org/install), refer to [링크2](https://docs.platformio.org/en/stable/platforms/espressif8266.html#using-arduino-framework-with-staging-version).
 ---
-### [메뉴3]
-* [ ] 사각
-* [ ] 사각
-* [ ] 사각
----
-### [메뉴4]
-1. 숫자
-2. 숫자
-
----
-* LED 횟수
+#### [LED 횟수]
 ```Cpp
 const int ledPin = 13;      // LED 핀 번호
 unsigned long previousMillis = 0; // 마지막 동작 시간 저장

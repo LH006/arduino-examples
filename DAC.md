@@ -23,7 +23,7 @@
 ---
  
 ```c++
-* HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 2482);
+HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 2482);
 HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
 ```
 

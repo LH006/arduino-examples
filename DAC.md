@@ -1,5 +1,9 @@
 # [HAL] DAC
 ### (Digital to Analog Converter)
+* ESP32 = 8bit 2개
+   *
+   *
+* 
 
 ### [# 사용법]
 * https://jeonhj.tistory.com/m/34
@@ -28,6 +32,27 @@
 
 ---
 ## [# 예제]
+
+```c++
+#include <driver/dac.h> // DAC 드라이버 포함
+
+void setup() {
+  // 25번 핀(DAC_CHANNEL_1) 활성화
+  dac_output_enable(DAC_CHANNEL_1);
+}
+
+void loop() {
+  // 1.65V 출력 (255의 절반인 127 설정)
+  dac_output_voltage(DAC_CHANNEL_1, 127);
+  delay(1000);
+
+  // 3.3V 출력 (최대값 255)
+  dac_output_voltage(DAC_CHANNEL_1, 255);
+  delay(1000);
+}
+```
+
+
 ---
 #### [Vref+ 가 3.3V, 4096 경우]
 * 3.3V * 1 / 4095 = 0.000806

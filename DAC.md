@@ -15,3 +15,24 @@
 #### [Vref+ 가 3.3V일 경우]
 * 3.3*1 / 4095 = 0.000806
 * Digital Value 1당 0.000806V가 출력
+
+
+
+```C++
+HAL_StatusTypeDef HAL_DAC_Start(DAC_HandleTypeDef *hdac, uint32_t Channel);
+// DAC Output Enable 함수
+// hdac: dac 인스턴스
+// Channel: DAC_CHANNEL_1 or DAC_CHANNEL_2
+
+HAL_StatusTypeDef HAL_DAC_Stop(DAC_HandleTypeDef *hdac, uint32_t Channel);
+// DAC Output Disable 함수
+// hadc: dac 인스턴스
+// Channel: DAC_CHANNEL_1 or DAC_CHANNEL_2
+
+HAL_StatusTypeDef HAL_DAC_SetValue(DAC_HandleTypeDef *hdac, uint32_t Channel, uint32_t Alignment, uint32_t Data);
+// DAC Value 설정 함수
+// hadc: dac 인스턴스
+// Channel: DAC_CHANNEL_1 or DAC_CHANNEL_2
+// Alignment: DAC_ALIGN_12B_R or DAC_ALIGN_12B_L or DAC_ALIGN_8B_R
+// data: 0 ~ 4095 값
+```

@@ -15,17 +15,17 @@
 #### [Vref+ 가 3.3V일 경우]
 * 3.3*1 / 4095 = 0.000806
 * Digital Value 1당 0.000806V가 출력
-
+---
 #### [DAC 채널 1의 출력을 2V로 설정]
    * = 2V * 4095 / 3.3V 
    * = 2481.82
    * ≒ 2482 
-
+---
  
-
-HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 2482);
+```c++
+* HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 2482);
 HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
-
+```
 
 
 ```C++

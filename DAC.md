@@ -33,6 +33,7 @@
 ---
 ## [# 예제]
 
+### [특정 전압 출력하기]
 ```c++
 #include <driver/dac.h> // DAC 드라이버 포함
 
@@ -52,6 +53,16 @@ void loop() {
 }
 ```
 
+### [삼각파(Sawtooth) 만들기]
+```c++
+void loop() {
+  for (int i = 0; i < 256; i++) {
+    dac_output_voltage(DAC_CHANNEL_1, i);
+    delayMicroseconds(100); // 이 간격으로 주파수 조절
+  }
+}
+
+```
 
 ---
 #### [Vref+ 가 3.3V, 4096 경우]

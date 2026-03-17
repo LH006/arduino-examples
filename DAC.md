@@ -1,9 +1,9 @@
 # [HAL] DAC
 ### (Digital to Analog Converter)
 * ESP32 = 8bit 2개
-   *
-   *
-* 
+   * 1
+   * 2
+* -
 
 ### [# 사용법]
 * https://jeonhj.tistory.com/m/34

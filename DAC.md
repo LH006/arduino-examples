@@ -11,6 +11,10 @@
 * VREF: VREF+ 핀에 인가된 전압
 * DOR: Data Output Register로 여기에 0~4095값이 쓰여짐
 
+
+
+
+
 ---
 ## [# 예제]
 ---

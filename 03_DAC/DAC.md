@@ -3,7 +3,6 @@
 * ESP32 = 8bit 2개
    * 1
    * 2
-* -
 
 ### [# 사용법]
 * https://jeonhj.tistory.com/m/34
@@ -21,10 +20,7 @@
 * 예)2048스탭 / 4096스텝 × 3.3V = 1.65V
 
 
-
-
-
-#### [12bit DAC 모듈]
+### [12bit DAC 모듈]
 * 0부터 Vref+ 에 인가된 전압을 4096(2^12)개로 쪼개어 출력으로 보냅
 * VREF: VREF+ 핀에 인가된 전압
 * DOR: Data Output Register로 여기에 0~4095값이 쓰여짐

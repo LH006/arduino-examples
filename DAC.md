@@ -1,7 +1,7 @@
 # [HAL] DAC
 ### (Digital to Analog Converter)
 
-### [사용법]
+### [# 사용법]
 * https://jeonhj.tistory.com/m/34
 
 
@@ -11,7 +11,8 @@
 * VREF: VREF+ 핀에 인가된 전압
 * DOR: Data Output Register로 여기에 0~4095값이 쓰여짐
 
-# [예제]
+---
+# [# 예제]
 #### [Vref+ 가 3.3V일 경우]
 * 3.3V * 1 / 4095 = 0.000806
 * Digital Value 1당 0.000806V가 출력

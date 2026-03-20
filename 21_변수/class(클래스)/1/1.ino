@@ -32,7 +32,7 @@ void setup()
 void loop()
 {
   char val1=0;
-  Calc obj(8, 8); //객체변수 선언 //클래스 룰을지키는 obj한개을 만들고 거기에 2,3값을 넣어라
+  Calc obj(8, 8); //객체변수 선언 //클래스 룰을지키는 obj 거기에 8,8 값을 넣어라
   Serial.println(obj.BBBB());
   delay(1000);
 }

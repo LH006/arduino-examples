@@ -11,9 +11,9 @@
 ---
 ## [라이브러리]
 * 라이브러리 및 소스 코드
-가장 안정적이고 기능이 많은 TMRh20 / RF24 라이브러리를 주로 사용합니다. 1.1.9, 1.3.8 
-* https://github.com/nRF24/RF24
-* https://www.arduinolibraries.info/libraries/rf24
+가장 안정적이고 기능이 많은 TMRh20 / RF24 라이브러리를 주로 사용
+
+* [TMRh20 / RF24] (https://github.com/nRF24/RF24) https://www.arduinolibraries.info/libraries/rf24
 * https://github.com/maniacbug
 ---
 

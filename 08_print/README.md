@@ -1,5 +1,24 @@
-***
-# []
+# [Serial.print]
+
+#### 예제
+```cpp
+void printData(){
+//  for(int i = 0; i < 17; i++)  Serial.print(buttonState[i]),Serial.print(" ");
+//  for(int i = 0; i < 4; i++)  Serial.print(joystick[i]),Serial.print(" ");
+//  for(int i = 0; i < 2; i++)  Serial.print(AnalogButton[i]),Serial.print(" ");
+//  Serial.println("");
+  Serial.print("Button Pressed:");
+  for(int i = 0; i < 2; i++)  if(buttonState[i] < 100)  Serial.print(Buttons[i]),Serial.print(",");
+  for(int i = 3; i < 17; i++)  if(buttonState[i] == 0)  Serial.print(Buttons[i]),Serial.print(",");
+  Serial.println("");
+  Serial.print("Analog Sticks:");
+  for(int i = 0; i < 4; i++)  Serial.print(joystick[i]),Serial.print(",");
+  for(int i = 0; i < 2; i++)  Serial.print(AnalogButton[i]),Serial.print(",");
+  Serial.println("");
+  Serial.println(inputCommand);
+}
+```
+
 #### 예제1
 ```C++
 printf("PACKET TYPE=%s, CHAN=%02d, RSSI=%02d,"

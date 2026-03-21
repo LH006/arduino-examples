@@ -1,4 +1,4 @@
-# [Serial.print]
+# [print]
 
 #### 예제
 ```cpp

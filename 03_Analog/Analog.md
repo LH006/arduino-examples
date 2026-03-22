@@ -4,3 +4,8 @@
   float voltage = sensorValue * (5.0 / 1023.0);
   Serial.println(voltage);
 ```
+```cpp
+  outputValue = map(sensorValue, 0, 1023, 0, 255);
+  // change the analog out value:
+  analogWrite(analogOutPin, outputValue);
+```

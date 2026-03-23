@@ -27,6 +27,9 @@ void printData(){
   Serial.println(inputCommand);
 }
 ```
+## Serial.available()
+- 시리얼 통신에 값이 있는지 없는지 확인
+- 데이터의 바이트크기를 읽어 반환
 
 ## Serial.print()
 - ▷ 문자열
@@ -41,7 +44,44 @@ void printData(){
 - 시리얼포트로 ASCII형식으로 출력
 
 ## Serial.printf()
--﻿ Serial.printf("%u bytes written in %u ms\r\n", 1024 * 512, end);
+- ▷ 주요 서식 지정자
+- %d: 정수 출력 (10진수)(%05d 자리수)
+- %f: 실수 출력 (기본 소수점 6자리) %.1f => 소숫점(.1소숫자리) %.nf: 소수점 이하 n자리 출력
+- %c: 단일 문자 출력
+- %s: 문자열 출력
+- %x/%X: 16진수 출력 (소문자/대문자)
+- %%: % 문자 출력
+
+`Serial.printf("%u bytes written in %u ms\r\n", 1024 * 512, end)`
+```cpp
+int number = 255;
+printf("10진수: %d\n16진수: %x\n8진수: %o\n", number, number, number);
+```
+```cpp
+int age = 25;
+float height = 175.5;
+char grade = 'A';
+char name[] = "Alice";
+
+printf("이름: %s\n", name);
+printf("나이: %d세\n", age);
+printf("키: %.1fcm\n", height);
+printf("등급: %c\n", grade);
+```
+```cpp
+char c2 = 'b'; // 문자 b 할당
+char lineFeed = '\n'; // 제어 문자 \n 할당
+printf("%c%c%c%c", c1, lineFeed, c2, lineFeed); // 제어 문자도 %c로 출력할 수 있음
+```
+```C++
+printf("PACKET TYPE=%s, CHAN=%02d, RSSI=%02d,"
+       " ADDR2=%02x:%02x:%02x:%02x:%02x:%02x\n",
+       wifi_sniffer_packet_type2str(type),
+       ppkt->rx_ctrl.channel,
+       ppkt->rx_ctrl.rssi,
+       hdr->addr2[0], hdr->addr2[1], hdr->addr2[2],
+       hdr->addr2[3], hdr->addr2[4], hdr->addr2[5]);
+```
 
 ## Serial.println(val,format)
 - ▷ format:
@@ -67,9 +107,6 @@ void printData(){
 ## Serial.write 차이
 - https://m.blog.naver.com/dokkosam/221382458541
 - Serial.write(65); //65에 해당하는 아스키값은 A로 출력
-
-## Serial.available()
-- ▷ available() 함수는 현재 시리얼 통신에 값이 있는지 없는지 확인하는 함수로 값이있다면 True를 반환
 
 ## Serial.read()
 - 시리얼 모니터에서 입력한 값을 읽어오게됩니다.
@@ -110,22 +147,14 @@ void serialEvent() { while(Serial.available()) { char inChar=(char)Serial.read()
 # 예제
 ---
 #### 예제
-```C++
-printf("PACKET TYPE=%s, CHAN=%02d, RSSI=%02d,"
-       " ADDR2=%02x:%02x:%02x:%02x:%02x:%02x\n",
-       wifi_sniffer_packet_type2str(type),
-       ppkt->rx_ctrl.channel,
-       ppkt->rx_ctrl.rssi,
-       hdr->addr2[0], hdr->addr2[1], hdr->addr2[2],
-       hdr->addr2[3], hdr->addr2[4], hdr->addr2[5]);
-```
-#### 예제2
+
+#### 예제
 ```C++
 SerialBT.print("PACKET_TYPE= " + String(wifi_sniffer_packet_type2str(type)) + " CHAN= " + String(ppkt->rx_ctrl.channel) + " RSSI= " + String(ppkt->rx_ctrl.rssi) + " ADDR2= " + String(hdr->addr2[0], HEX) + ":" + String(hdr->addr2[1], HEX) + ":" + String(hdr->addr2[2], HEX) + ":" + String(hdr->addr2[3], HEX) + ":" + String(hdr->addr2[4], HEX) + ":" + String(hdr->addr2[5], HEX) + "\n");
 ```
 ***
 # [문자열]
-#### 예제1
+#### 예제
 ```C++
   stringOne = String("You added ");
   stringTwo = String("this string");

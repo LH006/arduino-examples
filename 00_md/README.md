@@ -9,27 +9,24 @@ MD 파일
 > 이것은 인용문이다. - 작성자
 >> 내부에 다시 한번 사용 가능하다. 이것은 이중 인용문이다
 ```
+* 결과)
 > 블럭 인용 문자를 사용할 수 있다. 
 > 이것은 인용문이다. - 작성자
 >> 내부에 다시 한번 사용 가능하다. 이것은 이중 인용문이다. -
 
-
 ---
-
 # 표현
 * *기울여 쓰기*
 * _기울여 쓰기_
 * __굵게 쓰기__
 * ~~취소선~~
 * <u>밑줄</u>
-
 * <span style="color:red">빨간색</span>
 * <span style="color:#00FF00">Green</span>
 * (`#`을 넣은 뒤 16진수로 R, G, B 값을 입력해서 지정할 수 있다.)
 * <span style="color:rgb(0, 255, 0)">rgb(245, 235, 13)</span>
+
 ---
-
-
 # [코드 블럭]
 * 인라인 코드를 작성
 * 여러줄의 코드를 작성 할 때는 ｀ 기호 또는 ~를 세번 쓴 코드 블럭을 사용 할 수 있습니다.
@@ -67,25 +64,21 @@ def function():
 </p>
 
 # 이미지
-<p align="center">
-  <a href="/img/1.jpg" target="_blank"><img  style="width: 250px; height: 54px;" width="250" height="54" /></a>
-<br>
-</p>
 
+* 이미지 사이즈 조절 없이 올리는 경우 
+#### `![image](img/images.png)`
+![image](img/images.png)
 
-1. 이미지만 삽입할 경우
-![이미지](이미지 링크)
-
-2. 사이즈를 조절할 경우 - HTML 태그로 처리
-<img src=이미지링크 width="450px" or "40%" height="300px" title="크기변경">
-(velog에서는 사이즈 변경은 반영이 안되는거 같네요...)
-
-3. 이미지 삽입 후 링크 걸기
-[![이미지](링크)](연결할 링크)
-결과
-
-
+* 이미지 삽입 후 링크 걸기
+#### `[![이미지](링크)](연결할 링크)`
+[![image](img/images.png)](https://www.google.com)
 #### Latest release [![Latest release](https://img.shields.io/github/release/esp8266/Arduino.svg)](https://github.com/esp8266/Arduino/releases/latest/)
+
+* 이미지 사이즈를 조절할 경우 - HTML 태그로 처리
+#### `<img src="이미지주소.png" width="450px" or "40%" height="200" title="크기변경">`
+<img src="img/images.png" width="10%" height="" title="크기변경">
+
+# ////////////////////////////////////////////
 
 # [목록]
 ```
@@ -95,6 +88,11 @@ def function():
     - 두 칸을 띄어쓰면
     + 서브 목록을 붙일 수 있음
 ```
+- 순서가 필요 없이 점으로 목록 생성 시
+* 순서가 필요 없이 점으로 목록 생성 시
++ 순서가 필요 없이 점으로 목록 생성 시
+  + 11111
+  * 22222
 ---
 ### [메뉴3]
 * [ ] 사각
@@ -116,7 +114,7 @@ def function():
 ### [예시]
 * [Google] https://www.google.com "Google Link"
 * [Google](https://www.google.com)
-* [Google] <https://www.google.com/>
+* [Google] <https://www.google.com>
 * <email@abc.com>
 
 ---

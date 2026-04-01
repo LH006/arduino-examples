@@ -24,7 +24,7 @@
 ### Contents 2
 ---
 #### [LED 횟수]
-```Cpp
+```src/Cpp.ino
 const int ledPin = 13;      // LED 핀 번호
 unsigned long previousMillis = 0; // 마지막 동작 시간 저장
 const long interval = 500;  // 깜빡임 간격 (0.5초)
@@ -70,18 +70,6 @@ void updateBlink() {
       digitalWrite(ledPin, ledState);
     }
   }
-}
-```
-
-
-
-```src/main.c
-
-#include "header.h"
-
-int main (void)
-{
- ...
 }
 ```
 

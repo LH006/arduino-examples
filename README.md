@@ -72,3 +72,15 @@ void updateBlink() {
   }
 }
 ```
+
+
+
+```src/main.c
+
+#include "header.h"
+
+int main (void)
+{
+ ...
+}
+
